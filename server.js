@@ -21,11 +21,11 @@ const sess = {
 
 app.use(session(sess));
 
-// const helpers =require('./utils/helpers');
+const helpers =require('./utils/helpers');
 
-//hbs = exphbs.create({ helpers });
+hbs = exphbs.create({ helpers });
 
-// app.engine('handlebars', hbs.engine);
+app.engine('handlebars', hbs.engine);
 app.set('viewengine', 'handlebars');
 
 app.use(express.json());
