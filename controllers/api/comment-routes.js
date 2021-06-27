@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
     )
         .then(dbCommentData => {
             if (!dbCommentData) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.status(404).json({ message: 'No comment found with this id!' });
                 return;
             }
             res.json(dbCommentData);
@@ -80,16 +80,16 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbCommentData => {
-        if(!dbCommentData) {
-            res.status(404).json({ message: 'No comment with this id'});
-            return;
-        }
-        res.json(dbCommentData);
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+        .then(dbCommentData => {
+            if (!dbCommentData) {
+                res.status(404).json({ message: 'No comment with this id' });
+                return;
+            }
+            res.json(dbCommentData);
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
