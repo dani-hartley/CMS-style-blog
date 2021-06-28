@@ -5,12 +5,12 @@
   <div class="comments-text">
     {{#each this}}
     <section class="comment-list">
-      <div>
-        <span class="comment-user">{{user.username}}</span> on {{format_date created_at}} said {{comment_text}}
+        <div class="comment-user">
+          {{user.username}} on {{format_date created_at}} said {{comment_text}}
       </div>
-      <div class="text">
+      {{!-- <div class="text">
         {{comment_text}}
-      </div>
+      </div> --}}
     </section>
     {{/each}}
     </ul>
